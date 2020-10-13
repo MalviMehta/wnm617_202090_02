@@ -5,11 +5,11 @@
    	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-   	<link rel="stylesheet" href="./lib/css/jquery.mobile.structure-1.4.5.min.css">
-   	<link rel="stylesheet" href="./css/app.css">
+   	<link rel="stylesheet" href="../lib/css/jquery.mobile.structure-1.4.5.min.css">
+   	<link rel="stylesheet" href="../css/app.css">
 
-	<script src="./lib/js/jquery-2.2.4.min.js"></script>
-	<script src="./lib/js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="../lib/js/jquery-2.2.4.min.js"></script>
+	<script src="../lib/js/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 <body>
@@ -19,15 +19,15 @@
 			
 			<form id="signin-form" data-ajax="false">
 				<div class="flex-stretch display-flex align-center justify-center">
-				<img src="./lib/images/logo.png" style="width:40vw;height:40vw;" alt="Coffee Logo">
+				<img src="../lib/images/logo.png" style="width:40vw;height:40vw;" alt="Coffee Logo">
 			</div>
 				<div class="form-control">
 					<label for="signin-username" class="form-label">Username</label>
-					<input id="signin-username" type="" class="form-input" placeholder="Username" data-role="none">
+					<input id="signin-username" type="" class="form-input" data-role="none">
 				</div>
 				<div class="form-control">
 					<label for="signin-password" class="form-label">Password</label>
-					<input id="signin-password" type="password" class="form-input" placeholder="Password" data-role="none">
+					<input id="signin-password" type="password" class="form-input" data-role="none">
 				</div>
 
 				<div class="form-control">
@@ -52,19 +52,19 @@
 			
 			<form id="signup-form" data-ajax="false">
 				<div class="flex-stretch display-flex align-center justify-center margin-top">
-				<img src="./lib/images/logo.png" style="width:40vw;height:40vw;" alt="Coffee Logo">
+				<img src="../lib/images/logo.png" style="width:40vw;height:40vw;" alt="Coffee Logo">
 			</div>
 				<div class="form-control">
 					<label for="signup-username" class="form-label">Username</label>
-					<input id="signup-username" type="" class="form-input" placeholder="Username" data-role="none">
+					<input id="signup-username" type="" class="form-input" data-role="none">
 				</div>
 				<div class="form-control">
 					<label for="signup-password" class="form-label">Password</label>
-					<input id="signup-password" type="password" class="form-input" placeholder="Password" data-role="none">
+					<input id="signup-password" type="password" class="form-input" data-role="none">
 				</div>
 				<div class="form-control">
 					<label for="signup-password-confirm" class="form-label">Confirm Password</label>
-					<input id="signup-password-confirm" type="password" class="form-input" placeholder="Confirm Password" data-role="none">
+					<input id="signup-password-confirm" type="password" class="form-input" data-role="none">
 				</div>
 				<div class="form-control">
 					<a href="#recent-page" class="form-button button-primary">Sign up</a>
@@ -74,9 +74,10 @@
 		</div>
 	</section>
 
-	<!-- Recent Page -->
 	<section data-role="page" id="recent-page">
-
+		<header data-role="header">
+			<h1>Recent Page</h1>
+		</header>
 		<div data-role="main"></div>
 		<footer data-role="footer">
 			<ul>
@@ -88,28 +89,11 @@
 	</section>
 
 	<section data-role="page" id="add">
-		<div data-role="main" style="overflow: scroll;"> 
-			<img src="./lib/images/add1.png" class="pic" alt="Image">
-			<div class= "rectangle">
-				<h4>Add a Coffee</h4>
-			<div class="form-control1">
-					<label for="Coffee Type" class="form-label1">Coffee Type</label>
-					<input id="signin-username" type="" class="form-input1" placeholder="Coffee Type" data-role="none">
-					<label for="location" class="form-label1" class="form-control1">Location</label>
-					<input id="signin-username" type="" class="form-input1" placeholder="Location" data-role="none">
-					<div class="form-control">
-					<a href="#recent-page" class="button button-sec" >Add</a>
-					</div>
-					<div class="form-control">
-					<a href="#recent-page" class="button1 button-sec1">Cancel</a>
-					</div>						
-				</div>
-
-			
-			
-			</div>
-
-         <!--<ul>
+		<header data-role="header">
+			<h1>Add Page</h1>
+		</header>
+		<div data-role="main">
+         <ul>
             <li>
             	<img src="" alt="coffee image" style="width:2em;height:2em;">
             	<a href="#coffee-profile-page"> coffee 1</a>
@@ -142,7 +126,7 @@
             	<img src="" alt="coffee image" style="width:2em;height:2em;">
             	<a href="#coffee-profile-page">coffee 8</a>
             </li>
-         </ul><-->
+         </ul>
       </div>
 		<footer data-role="footer">
 			<ul>
@@ -161,7 +145,7 @@
 		<footer data-role="footer">
 			<ul>
 				<li><a href="#recent-page">Recent</a></li>
-				<li><a href="#add">Add</a></li>
+				<li><a href="#add">List</a></li>
 				<li><a href="#user-profile-page">Profile</a></li>
 			</ul>
 		</footer>
@@ -178,27 +162,6 @@
          coffee Profile
       </div>
 	</section>
-<script type="text/javascript">
-	$(".rating a").click(function() {
-	
-  var id = $(this).parent().attr("id");	
-	$("#" + id + " .vote").text($(this).data("vote"));
-  
-});
 
-
-$(".rating a").on("vmouseover", function() {
-	
-  var id = $(this).parent().attr("id");
-	$("#"+ id + ".rating a").each(function(i,v) {
-  	$(v).removeClass("rated");
-  });
-  
-  $(this).prevAll().each(function(i,v) {
-  	$(v).addClass("rated");
-  });
-  $(this).addClass("rated");
-});
-</script>
 </body>
 </html>
