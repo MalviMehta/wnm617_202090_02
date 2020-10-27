@@ -751,16 +751,16 @@ font-awesome.min.css">
          </div>
 			
 			<form id="signin-form" data-ajax="false">
-				<div class="form-control">
+		<div class="form-control">
 				
-			</div>
+			<div>
 				<div class="form-control">
 					<label for="signin-username" class="add-label" style="margin:0 20px 5px 20px;"> Coffee Name</label>
 					<input id="signin-username" type="text" class="form-input addcoffee" placeholder="Coffee Name" data-role="none">
 				</div>
 				<div class="form-control">
 					<label for="signin-password" class="add-label" style="margin:0 20px 5px 20px; ">Coffee Type</label>
-					<input id="signin-password" type="text" class="form-input addcoffee" placeholder="Coffee Name" data-role="none">
+					<input id="signin-password" type="text" class="form-input addcoffee" placeholder="Coffee Type" data-role="none">
 				</div>
 				<div class="form-control">
 					<label for="signin-password" class="add-label" style="margin:0 20px 5px 20px;">Location</label>
@@ -771,13 +771,19 @@ font-awesome.min.css">
 					<input id="signin-password" type="text" class="form-input addcoffee" placeholder="Rating" data-role="none">
 				</div>
 				<div class="form-control">
-					<a href="#recent-page" class="button button-sec" >Add</a>
-					<a href="#recent-page" class="button1 button-sec1">Cancel</a>
-					</div>	
-			</form>
+					<a href="#recent-page" class="button button-sec" >Cancel</a>
+					<a href="#recent-page" class="button1 button-sec1">Add</a>
+				</div>	
+      
+		 </div>
+       </div>
+
+         </form>
 		</div>
-		 <footer data-role="footer" data-template="#footer-template"></footer>
+   </div>
 </div>
+</div>
+<footer data-role="footer" data-template="#footer-template"></footer>
 
 </section>
 
@@ -883,7 +889,7 @@ font-awesome.min.css">
 
 
 
-
+             
 
 
 
@@ -898,10 +904,10 @@ font-awesome.min.css">
          </ul>
       </header>
       <div data-role="main">
-         <ul class="settings-list">
-            <li class="settings-item"><a href="#profile-settings-page">Profile Settings</a></li>
-            <li class="settings-item"><a href="#password-settings-page">Change Password</a></li>
-            <li class="settings-item"><a href="#" class="js-logout">Logout</a></li>
+         <ul class="settings-list" style="text-align: center">
+            <li class="settings-item  profile-settings-icon"><a href="#profile-settings-page"><img src="./lib/images/profilesettings.svg">Profile Settings</a></li>
+            <li class="settings-item profile-settings-icon"><a href="#password-settings-page"><img src="./lib/images/pincode.svg">Change Password</a></li>
+            <li class="settings-item profile-settings-icon"><a href="#" class="js-logout"><img src="./lib/images/logout.svg">Logout</a></li>
          </ul>
       </div>
    </section>
