@@ -597,4 +597,43 @@ h2{
    background-color:#F4D49C; 
 }
 
+/*Search bar*/
+
+.search-bar i {
+    position: absolute;
+}
+
+.search-bar {
+    width: 90%;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-icon {
+  background-image: url('../lib/images/search.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+    padding: 12px;
+    top: 22px;
+    left: 28px;
+}
+
+.search-bar input {
+  padding-left: 2.5em;
+}
+
+.form-search{
+    display: inline-block;
+    width: 100%;
+    border-color: #3f2500;
+    border-width: 1px;
+    font: inherit;
+    padding: 0.5em 1em;
+    margin: 0;
+    outline: 0;
+}
+
+
+
 
