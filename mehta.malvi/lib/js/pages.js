@@ -9,7 +9,8 @@ const ListPage = async() => {
 
    console.log(d)
 
-   $("#list-page .coffeelist").html(makeCoffeeList(d.result));
+    $("#list-page .coffeelist")
+      .html(makeCoffeeList(d.result));
 }
 
 const UserProfilePage = async() => {

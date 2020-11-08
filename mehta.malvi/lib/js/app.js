@@ -16,7 +16,7 @@ $(()=>{
       // Routing
       switch(ui.toPage[0].id) {
          case 'recent-page': RecentPage(); break;
-         case 'newlist-page': ListPage(); break;
+         case 'list-page': ListPage(); break;
          case 'user-profile-page': UserProfilePage(); break;
          case 'coffee-profile-page': CoffeeProfilePage(); break;
       }

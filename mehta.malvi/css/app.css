@@ -502,18 +502,7 @@ a:hover {
   background-color: #2a1c10;
   color:white; 
 }
-#coffee-profile-page-frap header{
-  background-color: #2a1c10;
-  color:white; 
-}
-#coffee-profile-page-cold header{
-  background-color: #2a1c10;
-  color:white; 
-}
-#coffee-profile-page-hot header{
-  background-color: #2a1c10;
-  color:white; 
-}
+
 
 
 .coffee-desc{
@@ -592,7 +581,7 @@ h2{
 
 /* List Page */
 
-#newlist-page [data-role='main'] {
+#list-page [data-role='main'] {
    background-position:center;
    background-size:cover;
    background-color:#F4D49C; 

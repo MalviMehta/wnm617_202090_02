@@ -21,10 +21,10 @@ const checkSigninForm = async() => {
       return;
    }
 
-   Let found_user = await query({
-      type:'check_signin', 
+   let found_user = await query({
+      type:'check_signin',
       params:[user,pass]
-      });
+   });
 
    if(found_user.result.length) {
       // logged in
