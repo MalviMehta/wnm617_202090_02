@@ -3,7 +3,7 @@ const RecentPage = async() => {}
 // async and await
 const ListPage = async() => {
    let d = await query({
-      type:'coffee_by_user_id',
+      type:'coffees_by_user_id',
       params:[sessionStorage.userId]
    });
 
@@ -28,7 +28,7 @@ const UserProfilePage = async() => {
 const CoffeeProfilePage = async() => {
    let d = await query({
       type:'coffee_by_id',
-      params:[sessionStorage.coffeeId]
+      params:[sessionStorage.animalId]
    });
 
    console.log(d)
