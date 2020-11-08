@@ -1,12 +1,13 @@
-const makeAnimalList = templater(o=>`
-<div class="animallist-item js-animal-jump" data-id="${o.id}">
-   <div class="animallist-image">
+
+const makeCoffeeList = templater(o=>`
+<div class="coffeelist-item js-coffee-jump" data-id="${o.id}">
+   <div class="coffeelist-image">
       <img src="${o.img}" alt="">
    </div>
-   <div class="animallist-description">
-      <div class="animallist-name">${o.name}</div>
-      <div class="animallist-type"><strong>type</strong> ${o.type}</div>
-      <div class="animallist-breed"><strong>breed</strong> ${o.breed}</div>
+   <div class="coffeelist-description">
+      <div class="coffeelist-name">${o.name}</div>
+      <div class="coffeelist-type"><strong>type</strong> ${o.type}</div>
+      <div class="coffeelist-ratings"><strong>ratings</strong> ${o.ratings}</div>
    </div>
 </div>
 `);
@@ -23,13 +24,13 @@ const makeUserProfile = templater(o=>`
 <p><a href="#settings-page">Settings</a></p>
 `);
 
-const makeAnimalProfile = templater(o=>`
+const makeCoffeeProfile = templater(o=>`
 <div class="profile-image">
    <img src="${o.img}" alt="">
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.name}</div>
    <div class="profile-type"><strong>Type</strong>: ${o.type}</div>
-   <div class="profile-breed"><strong>Breed</strong>: ${o.breed}</div>
+   <div class="profile-ratings"><strong>ratings</strong>: ${o.ratings}</div>
 </div>
 `);
