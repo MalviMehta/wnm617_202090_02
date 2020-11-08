@@ -48,6 +48,44 @@ function makeQuery($c,$ps,$p, $makeResults=true) {
       ];
    }
 }
+
+function makeStatement($data) {
+   $c = makeConn();
+   $t = @$data->type;
+   $p = @$data->params;
+
+   switch($t) {
+
+      case "users_all":
+         return makeQuery($c,"SELECT * FROM track_users",[]);
+      case "animals_all":
+         return makeQuery($c,"SELECT * FROM track_animals",[]);
+      case "locations_all":
+         return makeQuery($c,"SELECT * FROM track_locations",[]);
+
+
+      case "user_by_id":
+         return makeQuery($c,"SELECT * FROM track_users WHERE id = ?",$p);
+      case "animal_by_id":
+         return makeQuery($c,"SELECT * FROM track_animals WHERE id = ?",$p);
+      case "location_by_id":
+         return makeQuery($c,"SELECT * FROM track_locations WHERE id = ?",$p);
+
+
+      case "animals_by_user_id":
+         return makeQuery($c,"SELECT * FROM track_animals WHERE user_id = ?",$p);
+      case "locations_by_animal_id":
+         return makeQuery($c,"SELECT * FROM track_locations WHERE animal_id = ?",$p);
+
+
+
+      case "check_signin":
+         return makeQuery($c,"SELECT * FROM track_users WHERE username = ? AND password = md5(?)",$p);
+
+      default: return ["error"=>"No Matched type"];
+   }
+}
+
  
  echo json_encode(
  	makeQuery(makeConn(),"SELECT * FROM track_coffee WHERE name = ? AND type = ?" 
