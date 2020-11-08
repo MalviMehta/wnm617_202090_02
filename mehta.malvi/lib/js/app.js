@@ -8,6 +8,24 @@ $(()=>{
    $(document)
 
 
+
+      // ROUTES
+   .on("pagecontainerbeforeshow",function(e,ui){
+      console.log(ui.toPage[0].id)
+
+      // Routing
+      switch(ui.toPage[0].id) {
+         case 'recent-page': RecentPage(); break;
+         case 'newlist-page': ListPage(); break;
+         case 'user-profile-page': UserProfilePage(); break;
+         case 'coffee-profile-page': AnimalProfilePage(); break;
+      }
+   })
+
+
+
+
+
    /* FORM SUBMISSIONS */
 
    // event delegation
