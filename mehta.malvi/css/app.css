@@ -490,7 +490,8 @@ a:hover {
    padding:0.5em;
 }
 .coffeelist-type,
-.coffeelist-breed {
+.coffeelist-place,
+.coffeelist-ratings {
    font-size:0.8em;
 }
 .coffeelist-name {
