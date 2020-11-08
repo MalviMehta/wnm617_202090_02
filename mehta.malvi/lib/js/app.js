@@ -18,7 +18,7 @@ $(()=>{
          case 'recent-page': RecentPage(); break;
          case 'newlist-page': ListPage(); break;
          case 'user-profile-page': UserProfilePage(); break;
-         case 'coffee-profile-page': AnimalProfilePage(); break;
+         case 'coffee-profile-page': CoffeeProfilePage(); break;
       }
    })
 

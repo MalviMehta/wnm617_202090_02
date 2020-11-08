@@ -9,8 +9,7 @@ const ListPage = async() => {
 
    console.log(d)
 
-   $("#list-page .coffeelist")
-      .html(makeCoffeeList(d.result));
+   $("#list-page .coffeelist").html(makeCoffeeList(d.result));
 }
 
 const UserProfilePage = async() => {
@@ -21,8 +20,7 @@ const UserProfilePage = async() => {
 
    console.log(d)
 
-   $("#user-profile-page .profile")
-      .html(makeUserProfile(d.result));
+   $("#user-profile-page .profile").html(makeUserProfile(d.result));
 }
 
 const CoffeeProfilePage = async() => {
@@ -33,6 +31,5 @@ const CoffeeProfilePage = async() => {
 
    console.log(d)
 
-   $("#coffee-profile-page .profile")
-      .html(makeCoffeeProfile(d.result));
+   $("#coffee-profile-page .profile").html(makeCoffeeProfile(d.result));
 }
