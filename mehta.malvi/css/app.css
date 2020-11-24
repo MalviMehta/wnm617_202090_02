@@ -187,6 +187,7 @@ a:hover {
    flex: 1 1 100%;
    overflow:hidden;
    position:relative;
+
 }
 .ui-header,
 .ui-footer {
@@ -208,6 +209,7 @@ a:hover {
    left:0;
    width:100%;
    text-align:center;
+   color:#fff;
 }
 
 
@@ -276,8 +278,9 @@ a:hover {
     padding: 1em;
 }
 .modal-head, .modal-foot {
-    background-color: var(--color-neutral-lighter);
+    background-color: #2a1c10;
     padding: 0.5em 1em;
+    color: white;
 }
 
 
@@ -301,6 +304,7 @@ a:hover {
    font-weight:bold;
    background-color:transparent;
    outline:0;
+   color: white;
 }
 
 
@@ -355,6 +359,18 @@ a:hover {
     border-radius: 2rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     font-size: 1.5em;
+    margin-top: 50px;
+}
+
+.modal-close-floater {
+    position: absolute;
+}
+.modal-close-floater.right {
+    right: 1em;
+}
+.modal-close-floater.top {
+    top: -1em;
+    transform: translateY(-100%);
 }
 
 
@@ -369,10 +385,11 @@ a:hover {
   background-color:#F4D49C; 
 }
 .profile-image img {
-	
-   background-position: center; 
-   background-size: cover;
-   margin:0;
+  border-radius: 50%;
+  width: calc(100vw - 4em);
+  height: calc(100vw - 4em);
+  object-fit: cover;
+  margin: 2em;
 }
 .profile-body {
    padding:1em 1em 0.5em 1em;
@@ -481,7 +498,7 @@ a:hover {
     background-color: white;
 
     margin: 1em;
-    
+    border-radius: 20px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
     overflow: hidden;
 }
@@ -503,7 +520,8 @@ a:hover {
   color:white; 
 }
 
-
+#coffee-profile-page{
+}
 
 .coffee-desc{
   background-color: #F4D49C;
@@ -583,8 +601,8 @@ h2{
 
 #list-page [data-role='main'] {
    background-position:center;
-   background-size:cover;
-   background-color:#F4D49C; 
+   background-size:cover; 
+   background-color: #f4d49c;
 }
 
 /*Search bar*/

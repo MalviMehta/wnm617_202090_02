@@ -58,7 +58,7 @@ function makeStatement($data) {
 
       case "users_all":
          return makeQuery($c,"SELECT * FROM track_users",[]);
-      case "coffee_all":
+      case "coffees_all":
          return makeQuery($c,"SELECT * FROM track_coffee",[]);
       case "locations_all":
          return makeQuery($c,"SELECT * FROM track_locations",[]);
@@ -76,6 +76,10 @@ function makeStatement($data) {
          return makeQuery($c,"SELECT * FROM track_coffee WHERE user_id = ?",$p);
       case "locations_by_coffee_id":
          return makeQuery($c,"SELECT * FROM track_locations WHERE coffee_id = ?",$p);
+
+
+      //case "recentcoffee_by_location":
+         //return makeQuery($c,"SELECT coffee_id, x.lat, x.lng FROM track_locations WHERE (coffee_id, date_create) in (SELECT coffee_id, max(date_create)  FROM track_locations GROUP BY  coffee_id)",$p;
 
 
 

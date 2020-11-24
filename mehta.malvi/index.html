@@ -11,15 +11,15 @@ font-awesome.min.css">
    	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    	<link rel="stylesheet" href="css/app.css">
 
-      <script src="./lib/js/functions.js"></script>
+   <script src="./lib/js/functions.js"></script>
    <script src="./lib/js/pages.js"></script>
-    <script src="./lib/js/parts.js"></script>
-	
+   <script src="./lib/js/parts.js"></script>
+   <script src="./lib/js/signin.js"></script>
    <script src="./lib/js/jquery-2.2.4.min.js"></script>
 	<script src="./lib/js/app.js"></script>
 
 	
-	<script src="./lib/js/signin.js"></script>
+	
 
 	<script src="./lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -95,115 +95,45 @@ font-awesome.min.css">
 	</section>
 
 	<!-- Recent Page-->
+
 <section data-role="page" id="recent-page">
-	
+      <div data-role="main">
+          <header data-role="header">
+        <h1> Recent Page</h1>
+         </header>
+         <div class="map"></div>
 
-     <div data-role="main">
-         <div class="overscroll">
-         	 <div class="profile-top" style="height: 400px;	background-position: center; background-size: cover; background-image:url(./lib/images/map.png)"></div>
+          <div class="floater top right">
+            <div class="btn-circle" data-activate="#recent-add-modal" data-deactivate="#recent-profile-modal">&plus;</div>
+         </div>
+        <!-- <div class="floater bottom right">
+            <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
+         </div>
+      -->
 
-           	<div class="coffeelist">
-            
-               <a href="#coffee-profile-page-frap" class="coffeelist-item">
-                  <div class="coffeelist-image">
-                     <img src="./lib/images/toc.png" alt="">
-                  </div>
-                  <div class="coffeelist-description">
-                     <div class="coffeelist-name">Mocha Cookie Crumble</div>
-                     <div class="coffeelist-type"><strong>Frappucino</strong></div>
-                     <div class="coffeelist-place"><strong>Big Mug Roaster</strong></div>
-                     <div class="coffeelist-ratings"><strong></strong> Rating: 2/5</div>
-                  </div>
-               </a>
-               <a href="#coffee-profile-page-cold" class="coffeelist-item">
-                  <div class="coffeelist-image">
-                     <img src="./lib/images/toc.png" alt="">
-                  </div>
-                  <div class="coffeelist-description">
-                     <div class="coffeelist-name">Machiato</div>
-                     <div class="coffeelist-type"><strong>Cold Coffees</strong></div>
-                     <div class="coffeelist-place"><strong></strong> Nirvana Soul</div>
-                     <div class="coffeelist-ratings"><strong></strong> Rating: 3/5</div>
-                  </div>
-               </a>
-               <a href="#coffee-profile-page-hot" class="coffeelist-item">
-                  <div class="coffeelist-image">
-                     <img src="./lib/images/toc.png" alt="">
-                  </div>
-                  <div class="coffeelist-description">
-                     <div class="coffeelist-name">Espresso</div>
-                     <div class="coffeelist-type"><strong>Hot Coffees</strong></div>
-                     <div class="coffeelist-place"><strong>Spectra Coffee</strong></div>
-                     <div class="coffeelist-ratings"><strong></strong> Rating: 4/5</div>
-                  </div>
-               </a>
-               <a href="#coffee-profile-page-frap" class="coffeelist-item">
-                  <div class="coffeelist-image">
-                     <img src="./lib/images/toc.png" alt="">
-                  </div>
-                  <div class="coffeelist-description">
-                     <div class="coffeelist-name">Mocha Cookie Crumble</div>
-                     <div class="coffeelist-type"><strong>Frappucino</strong></div>
-                     <div class="coffeelist-place"><strong>Big Mug Roaster</strong></div>
-                     <div class="coffeelist-ratings"><strong></strong> Rating: 2/5</div>
-                  </div>
-               </a>
-                <a href="#coffee-profile-page-cold" class="coffeelist-item">
-                  <div class="coffeelist-image">
-                     <img src="./lib/images/toc.png" alt="">
-                  </div>
-                  <div class="coffeelist-description">
-                     <div class="coffeelist-name">Machiato</div>
-                     <div class="coffeelist-type"><strong>Cold Coffees</strong></div>
-                     <div class="coffeelist-place"><strong></strong> Nirvana Soul</div>
-                     <div class="coffeelist-ratings"><strong></strong> Rating: 3/5</div>
-                  </div>
-               </a>
-               <a href="#coffee-profile-page-hot" class="coffeelist-item">
-                  <div class="coffeelist-image">
-                     <img src="./lib/images/toc.png" alt="">
-                  </div>
-                  <div class="coffeelist-description">
-                     <div class="coffeelist-name">Espresso</div>
-                     <div class="coffeelist-type"><strong>Hot Coffees</strong></div>
-                     <div class="coffeelist-place"><strong>Spectra Coffee</strong></div>
-                     <div class="coffeelist-ratings"><strong></strong> Rating: 4/5</div>
-                  </div>
-               </a>
 
+         <div class="modal" id="recent-coffee-modal">
+            <div class="modal-drawer bottom">
+               <div class="modal-close-floater top right">
+                  <div class="btn-circle" data-deactivate="#recent-coffee-modal">&times;</div>
+               </div>
+               <div class="modal-head">head</div>
+               <div class="modal-body"></div>
             </div>
          </div>
-      </div>
 
+         <!-- <div class="modal" id="recent-profile-modal">
+            <div class="modal-drawer left">
+               <div class="modal-head">head</div>
+               <div class="modal-body">body</div>
+            </div>
+         </div> -->
+      </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
-
-      <div class="modal" id="list-add-modal">
-         <div class="modal-back" data-deactivate="#list-add-modal"></div>
-         <form id="list-add-form" data-ajax="false" class="modal-popup">
-            <div class="modal-head">Add coffee</div>
-            <div class="modal-body">
-               <div class="form-control">
-                  <label for="list-add-name" class="form-label">Coffee Name</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type Coffee name">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-type" class="form-label">Coffee Type</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type Coffee type">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Location</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type Coffee breed">
-               </div>
-            </div>
-            <div class="modal-foot">
-               <input type="submit" value="Save" data-role="none">
-            </div>
-         </div>
-      </div>
+      
    </section>
 
-
-   <section data-role="page" id="coffee-profile-page-frap">
+ <!--  <section data-role="page" id="coffee-profile-page">
       <header data-role="header">
          <h1>Coffee Page</h1>
          <ul>
@@ -227,7 +157,7 @@ font-awesome.min.css">
       </div>
 
    </section>
-   <section data-role="page" id="coffee-profile-page-cold">
+   <section data-role="page" id="coffee-profile-page">
       <header data-role="header">
          <h1>Coffee Page</h1>
          <ul>
@@ -254,7 +184,7 @@ font-awesome.min.css">
 
 
 
-   <section data-role="page" id="coffee-profile-page-hot">
+   <section data-role="page" id="coffee-profile-page">
       <header data-role="header">
          <h1>Coffee Page</h1>
          <ul>
@@ -277,7 +207,7 @@ font-awesome.min.css">
          </div>
       </div>
 
-   </section>
+   </section> -->
 
    
 
@@ -289,17 +219,18 @@ font-awesome.min.css">
 
 <!-- List Page -->
 <section data-role="page" id="list-page">
-   <header data-role="header ui-header">
-         <div class= " form-control search-bar">
-            <i class="search-icon"></i>
-              <input id="search" type="text" class="form-search" data-role="none" placeholder="Search by coffee name or location">
-          </div>
+   <header data-role="header">
+        <h1> List Page</h1>
+         <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-activate="#list-add-modal" style="color:white;">&plus;</a></li>
+         </ul>
       </header>
    
 
      <div data-role="main">
          <div class="overscroll">
-            <div class="coffeelist"></div>
+            <div class ="coffeelist"></div>
          </div>
       </div>
 
@@ -308,7 +239,7 @@ font-awesome.min.css">
       <div class="modal" id="list-add-modal">
          <div class="modal-back" data-deactivate="#list-add-modal"></div>
          <form id="list-add-form" data-ajax="false" class="modal-popup">
-            <div class="modal-head">Add coffee</div>
+            <div class="modal-head">Add a New Coffee</div>
             <div class="modal-body">
                <div class="form-control">
                   <label for="list-add-name" class="form-label">Coffee Name</label>
@@ -339,23 +270,16 @@ font-awesome.min.css">
          </ul>
       </header>
      <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:300px;background-position: center; background-size: cover;background-image:url(./lib/images/coffee.jpg)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-         
-            <div class="overscroll coffee-desc"  > 
-               <h2>Coffee Mocha</h2>
-               <p><ul class="no-bullets"><li class="coffee-des-list"><strong>Coffee Name: </strong>Mocha Cookie Crumble</li>
-                  <li class="coffee-des-list"><strong>Coffee Type: </strong>Frappucino</li>
-                  <li class="coffee-des-list"><strong>Coffee Location: </strong>Big Mug Roaster</li>
-                  <li class="coffee-des-list"><strong>Coffee Rating: </strong>2/5</li>
-                  </ul>
-               </p>
-            </div>
+         <div class="profile-top">
+            <div class="map"></div>
+         </div>
+         <div class="profile-bottom">
+            <div class="profile">   
          </div>
       </div>
 
    </section>
-   <section data-role="page" id="coffee-profile-page">
+  <!-- <section data-role="page" id="coffee-profile-page">
       <header data-role="header">
          <h1>Coffee Page</h1>
          <ul>
@@ -405,62 +329,9 @@ font-awesome.min.css">
          </div>
       </div>
 
-   </section>
+   </section> 
 
-
-
-
-
-
-
-   <!-- Add Page-->
-
-	<section data-role="page" id="add">
-		<div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:200px;background-position: center; background-size: cover;background-image:url(./lib/images/add1.png)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-
-		<div class = "overscroll">
-		<div data-role="main" class="display-flex flex-column">
-			<div class="flex-stretch display-flex flex-align-center flex-justify-center">
-         </div>
-			
-			<form id="signin-form" data-ajax="false">
-		<div class="form-control">
-				
-			<div>
-				<div class="form-control">
-					<label for="signin-username" class="add-label" style="margin:0 20px 5px 20px;"> Coffee Name</label>
-					<input id="signin-username" type="text" class="form-input addcoffee" placeholder="Coffee Name" data-role="none">
-				</div>
-				<div class="form-control">
-					<label for="signin-password" class="add-label" style="margin:0 20px 5px 20px; ">Coffee Type</label>
-					<input id="signin-password" type="text" class="form-input addcoffee" placeholder="Coffee Type" data-role="none">
-				</div>
-				<div class="form-control">
-					<label for="signin-password" class="add-label" style="margin:0 20px 5px 20px;">Location</label>
-					<input id="signin-password" type="text" class="form-input addcoffee" placeholder="Location" data-role="none">
-				</div>
-				<div class="form-control">
-					<label for="signin-password" class="add-label" style="margin:0 20px 5px 20px;">Rating</label>
-					<input id="signin-password" type="text" class="form-input addcoffee" placeholder="Rating" data-role="none">
-				</div>
-				<div class="form-control">
-					<a href="#recent-page" class="button button-sec" >Cancel</a>
-					<a href="#recent-page" class="button1 button-sec1">Add</a>
-				</div>	
-      
-		 </div>
-       </div>
-
-         </form>
-		</div>
-   </div>
-</div>
-</div>
-<footer data-role="footer" data-template="#footer-template"></footer>
-
-</section>
+-->
 
 
 
@@ -606,10 +477,6 @@ font-awesome.min.css">
       <li><a href="#list-page">
          <div class="nav-icon"><img src= "./lib/images/list.svg" alt=""></div>
          <div class="nav-label">List</div>
-      </a></li>
-      <li><a href="#add">
-         <div class="nav-icon"><img src= "./lib/images/add.svg" alt=""></div>
-         <div class="nav-label">Add</div>
       </a></li>
       <li><a href="#user-profile-page">
          <div class="nav-icon"><img src= "./lib/images/user1.svg" alt=""></div>

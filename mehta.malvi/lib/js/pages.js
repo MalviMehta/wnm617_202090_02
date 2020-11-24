@@ -3,14 +3,13 @@ const RecentPage = async() => {}
 // async and await
 const ListPage = async() => {
    let d = await query({
-      type:'coffees_by_user_id',
+      type:'coffee_by_user_id',
       params:[sessionStorage.userId]
    });
 
    console.log(d)
 
-    $("#list-page .coffeelist")
-      .html(makeCoffeeList(d.result));
+    $("#list-page .coffeelist").html(makeCoffeeList(d.result));
 }
 
 const UserProfilePage = async() => {
@@ -27,7 +26,7 @@ const UserProfilePage = async() => {
 const CoffeeProfilePage = async() => {
    let d = await query({
       type:'coffee_by_id',
-      params:[sessionStorage.animalId]
+      params:[sessionStorage.coffeeId]
    });
 
    console.log(d)

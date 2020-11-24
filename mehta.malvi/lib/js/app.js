@@ -1,13 +1,9 @@
-
-
 // Document Ready
 $(()=>{
 
    checkUserId();
 
    $(document)
-
-
 
       // ROUTES
    .on("pagecontainerbeforeshow",function(e,ui){
@@ -42,6 +38,12 @@ $(()=>{
       sessionStorage.removeItem('userId');
       checkUserId();
    })
+
+   .on("click",".js-coffee-jump",function(e){
+      sessionStorage.coffeeId = $(this).data("id");
+      $.mobile.navigate("#coffee-profile-page");
+   })
+
 
 
 
