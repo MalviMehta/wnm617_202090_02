@@ -1,9 +1,13 @@
+
+
 // Document Ready
 $(()=>{
 
    checkUserId();
 
    $(document)
+
+
 
       // ROUTES
    .on("pagecontainerbeforeshow",function(e,ui){
@@ -15,6 +19,8 @@ $(()=>{
          case 'list-page': ListPage(); break;
          case 'user-profile-page': UserProfilePage(); break;
          case 'coffee-profile-page': CoffeeProfilePage(); break;
+         case 'coffee-profile-edit-page': CoffeeProfileEditPage(); break;
+         case 'user-profile-edit-page': UserProfileEditPage(); break;
       }
    })
 

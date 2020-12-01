@@ -1,5 +1,3 @@
-
-
 const makeWarning = (target,message) => {
    $(target).addClass("active")
       .find(".message").html(message);
@@ -25,7 +23,7 @@ const checkSigninForm = async() => {
       type:'check_signin',
       params:[user,pass]
    });
-
+   console.log(found_user)
    if(found_user.result.length) {
       // logged in
       console.log('success');

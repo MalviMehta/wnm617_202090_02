@@ -162,12 +162,6 @@ a:hover {
 }
 
 
-#recent-page [data-role='main'] {
-   background-position:center;
-   background-size:cover;
-   background-color:#F4D49C; 
-}
-
 
 
 
@@ -274,7 +268,7 @@ a:hover {
    width:80vw;
 }
 .modal-body {
-    background-color: var(--color-white);
+    background-color: #f4d49c;
     padding: 1em;
 }
 .modal-head, .modal-foot {
@@ -389,7 +383,7 @@ a:hover {
   width: calc(100vw - 4em);
   height: calc(100vw - 4em);
   object-fit: cover;
-  margin: 2em;
+  margin: 2em
 }
 .profile-body {
    padding:1em 1em 0.5em 1em;
@@ -398,12 +392,14 @@ a:hover {
    font-size:1em;
    margin-bottom: 1em;
    border-bottom: 1px solid gray;
+   padding: 1em;
 }
 
 .profile-email{
    font-size:1em;
    margin-bottom: 1em;
    border-bottom: 1px solid gray;
+   padding: 1em;
 }
 
 #settings-page{
@@ -521,6 +517,7 @@ a:hover {
 }
 
 #coffee-profile-page{
+  background-color: #F4D49C;
 }
 
 .coffee-desc{
@@ -641,6 +638,88 @@ h2{
     margin: 0;
     outline: 0;
 }
+.user-profile-edit{
+  background-image: url('../lib/images/login.png');
+  background-size: cover;
+}
+
+
+.map{
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.coffee-top{
+  flex:1 1 100%;
+  position: relative;
+  height: 30vh;
+}
+.coffee-top .profile {
+    display: flex;
+}
+.coffee-bottom .profile-image img {
+    width: 40vw;
+    height: 40vw;
+    margin: 20px 0px 10px 110px;
+    left: 0;
+    text-align: center;  
+}
+.coffee-bottom{
+  flex:none;
+  position: relative;
+}
+
+
+
+/* MODAL DRAWER */
+.modal-drawer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition:all 0.3s;
+    box-shadow:0 0 5px rgba(0,0,0,0.3);
+}
+
+.modal-drawer.left,
+.modal-drawer.right {
+   height:100%;
+   width:70vw;
+}
+.modal-drawer.left { left:0; transform:translateX(-100%); }
+.modal-drawer.right { right:0; transform:translateX(100%); }
+
+.modal-drawer.top,
+.modal-drawer.bottom {
+   height:30vh;
+   width:100%;
+}
+.modal-drawer.top { top:0; transform:translateY(-100%); }
+.modal-drawer.bottom { bottom:0; transform:translateY(100%); }
+
+.modal.active .modal-drawer {
+   transform:translate(0);
+   pointer-events:initial;
+}
+
+
+.modal-drawer .modal-body {
+   flex: 1 1 100%;
+   background-color: #f4d49c;
+}
+
+
+
+
+.setimg{
+  background-image: url(../lib/images/login.png);
+    background-size: cover;
+}
+
 
 
 

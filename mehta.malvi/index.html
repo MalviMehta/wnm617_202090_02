@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+   
 	<title>Cuppa Trace</title>
    	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,16 +14,18 @@ font-awesome.min.css">
    	<link rel="stylesheet" href="css/app.css">
 
    <script src="./lib/js/functions.js"></script>
+  <script src="./lib/js/maps.js"></script>
    <script src="./lib/js/pages.js"></script>
    <script src="./lib/js/parts.js"></script>
    <script src="./lib/js/signin.js"></script>
    <script src="./lib/js/jquery-2.2.4.min.js"></script>
 	<script src="./lib/js/app.js"></script>
-
+    
 	
 	
 
 	<script src="./lib/js/jquery.mobile-1.4.5.min.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm9vAM0ReW-_E67Kcp23VO-XdJ8xdw9YI" defer></script>
 
 </head>
 <body>
@@ -74,6 +78,10 @@ font-awesome.min.css">
 					<label for="signup-username" class="form-label">Username</label>
 					<input id="signup-username" type="text" class="form-input" placeholder="Username" data-role="none">
 				</div>
+            <div class="form-control">
+               <label for="signup-email" class="form-label">Username</label>
+               <input id="signup-email" type="email" class="form-input" placeholder="Email" data-role="none">
+            </div>
 				<div class="form-control">
 					<label for="signup-password" class="form-label">Password</label>
 					<input id="signup-password" type="password" class="form-input" placeholder="Password" data-role="none">
@@ -98,124 +106,29 @@ font-awesome.min.css">
 
 <section data-role="page" id="recent-page">
       <div data-role="main">
-          <header data-role="header">
-        <h1> Recent Page</h1>
+         <header data-role="header">
+            <h1> Recent Page</h1>
          </header>
          <div class="map"></div>
 
-          <div class="floater top right">
+           <div class="floater top right">
             <div class="btn-circle" data-activate="#recent-add-modal" data-deactivate="#recent-profile-modal">&plus;</div>
          </div>
-        <!-- <div class="floater bottom right">
-            <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
-         </div>
-      -->
-
-
+      
          <div class="modal" id="recent-coffee-modal">
             <div class="modal-drawer bottom">
                <div class="modal-close-floater top right">
                   <div class="btn-circle" data-deactivate="#recent-coffee-modal">&times;</div>
                </div>
-               <div class="modal-head">head</div>
+               <div class="modal-head">Recent Coffee</div>
                <div class="modal-body"></div>
             </div>
          </div>
-
-         <!-- <div class="modal" id="recent-profile-modal">
-            <div class="modal-drawer left">
-               <div class="modal-head">head</div>
-               <div class="modal-body">body</div>
-            </div>
-         </div> -->
       </div>
+
       <footer data-role="footer" data-template="#footer-template"></footer>
       
-   </section>
-
- <!--  <section data-role="page" id="coffee-profile-page">
-      <header data-role="header">
-         <h1>Coffee Page</h1>
-         <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
-         </ul>
-      </header>
-     <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:300px;background-position: center; background-size: cover;background-image:url(./lib/images/coffee.jpg)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-         
-            <div class="overscroll coffee-desc"  > 
-               <h2>Coffee Mocha</h2>
-               <p><ul class="no-bullets"><li class="coffee-des-list"><strong>Coffee Name: </strong>Mocha Cookie Crumble</li>
-                  <li class="coffee-des-list"><strong>Coffee Type: </strong>Frappucino</li>
-                  <li class="coffee-des-list"><strong>Coffee Location: </strong>Big Mug Roaster</li>
-                  <li class="coffee-des-list"><strong>Coffee Rating: </strong>2/5</li>
-                  </ul>
-               </p>
-            </div>
-         </div>
-      </div>
-
-   </section>
-   <section data-role="page" id="coffee-profile-page">
-      <header data-role="header">
-         <h1>Coffee Page</h1>
-         <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
-         </ul>
-      </header>
-     <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:300px;background-position: center; background-size: cover;background-image:url(./lib/images/coffee.jpg)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-         
-            <div class="overscroll coffee-desc"  > 
-               <h2>Machiato</h2>
-               <p><ul class="no-bullets"><li class="coffee-des-list"><strong>Coffee Name: </strong>Machiato</li>
-                  <li class="coffee-des-list"><strong>Coffee Type: </strong>Cold Coffees</li>
-                  <li class="coffee-des-list"><strong>Coffee Location: </strong>Nirvana Soul</li>
-                  <li class="coffee-des-list"><strong>Coffee Rating: </strong>3/5</li>
-                  </ul>
-               </p>
-            </div>
-         </div>
-      </div>
-
-   </section>
-
-
-
-   <section data-role="page" id="coffee-profile-page">
-      <header data-role="header">
-         <h1>Coffee Page</h1>
-         <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
-         </ul>
-      </header>
-     <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:300px;background-position: center; background-size: cover;background-image:url(./lib/images/coffee.jpg)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-         
-            <div class="overscroll coffee-desc"  > 
-            <h2>Espresso</h2>
-               <p><ul class="no-bullets"><li class="coffee-des-list"><strong>Coffee Name: </strong>Espresso</li>
-                  <li class="coffee-des-list"><strong>Coffee Type: </strong>Hot Coffees</li>
-                  <li class="coffee-des-list"><strong>Coffee Location: </strong>Spectra Coffee</li>
-                  <li class="coffee-des-list"><strong>Coffee Rating: </strong>4/5</li>
-                  </ul>
-               </p>
-            </div>
-         </div>
-      </div>
-
-   </section> -->
-
-   
-
-
-
-
-
-
+</section>
 
 <!-- List Page -->
 <section data-role="page" id="list-page">
@@ -257,7 +170,7 @@ font-awesome.min.css">
             <div class="modal-foot">
                <input type="submit" value="Save" data-role="none">
             </div>
-         </div>
+         </form>
       </div>
    </section>
 
@@ -267,83 +180,91 @@ font-awesome.min.css">
          <h1>Coffee Page</h1>
          <ul>
             <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
+            <li class="flex-stretch"></li>
+            <li>
+               <a href="#coffee-profile-edit-page" class="ui-link">
+               <img src="./lib/images/edit.svg" alt="" class="icon" style="height:1.5em; width:1.5em;vertical-align: middle;">
+               </a>
+            </li>
          </ul>
       </header>
      <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top">
+         <div class="coffee-top">
             <div class="map"></div>
          </div>
-         <div class="profile-bottom">
-            <div class="profile">   
-         </div>
+         <div class = "overscroll">
+         <div class="coffee-bottom">
+            <div class="profile"></div>   
       </div>
+   </div>
 
    </section>
-  <!-- <section data-role="page" id="coffee-profile-page">
+   <section data-role="page" id="coffee-profile-edit-page">
       <header data-role="header">
-         <h1>Coffee Page</h1>
+         <h1>Coffee Info</h1>
          <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
          </ul>
       </header>
-     <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:300px;background-position: center; background-size: cover;background-image:url(./lib/images/coffee.jpg)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
+      <div data-role="main" class="display-flex flex-column">
+         <form id="coffee-edit-form" data-ajax="false" style="padding:1em"></form>
          
-            <div class="overscroll coffee-desc"  > 
-               <h2>Machiato</h2>
-               <p><ul class="no-bullets"><li class="coffee-des-list"><strong>Coffee Name: </strong>Machiato</li>
-                  <li class="coffee-des-list"><strong>Coffee Type: </strong>Cold Coffees</li>
-                  <li class="coffee-des-list"><strong>Coffee Location: </strong>Nirvana Soul</li>
-                  <li class="coffee-des-list"><strong>Coffee Rating: </strong>3/5</li>
-                  </ul>
-               </p>
-            </div>
-         </div>
       </div>
-
    </section>
 
 
+   <div class="modal" id="warning-modal">
+      <div class="modal-toast top" data-deactivate="#warning-modal">
+         <div class="message">Message</div>
+      </div>
+   </div>
 
-   <section data-role="page" id="coffee-profile-page">
-      <header data-role="header">
-         <h1>Coffee Page</h1>
+  
+<!-- user-profile-page-->
+
+ <section data-role="page" id="user-profile-page">
+     <header data-role="header">
+         <h1>Profile</h1>
          <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left fa-lg" style="color: white;"></i></a></li>
+            <li class="flex-stretch"></li>
+            <li>
+               <a href="#settings-page" class="ui-link">
+               <i class ="fa fa-cog fa-lg" style="color: white;"></i>
+               </a>
+            </li>
          </ul>
       </header>
-     <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:300px;background-position: center; background-size: cover;background-image:url(./lib/images/coffee.jpg)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-         
-            <div class="overscroll coffee-desc"  > 
-            <h2>Espresso</h2>
-               <p><ul class="no-bullets"><li class="coffee-des-list"><strong>Coffee Name: </strong>Espresso</li>
-                  <li class="coffee-des-list"><strong>Coffee Type: </strong>Hot Coffees</li>
-                  <li class="coffee-des-list"><strong>Coffee Location: </strong>Spectra Coffee</li>
-                  <li class="coffee-des-list"><strong>Coffee Rating: </strong>4/5</li>
-                  </ul>
-               </p>
-            </div>
-         </div>
+      <div data-role="main">
+         <div class="profile"></div>
       </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      
+</section>
+<section data-role="page" id="settings-page">
+   <header data-role="header">
+         <h1>Settings</h1>
+         <ul>
+            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
+            <li class="flex-stretch"></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="setimg">
 
-   </section> 
-
--->
-
-
-
-
-
-
-
+         <ul class="settings-list" style="text-align: center">
+            <li class="settings-item  profile-settings-icon"><a href="#user-profile-edit-page"><img src="./lib/images/profilesettings.svg">Profile Settings</a></li>
+            <li class="settings-item profile-settings-icon"><a href="#password-settings-page"><img src="./lib/images/pincode.svg">Change Password</a></li>
+            <li class="settings-item profile-settings-icon"><a href="#" class="js-logout"><img src="./lib/images/logout.svg">Logout</a></li>
+         </ul>
+      </div>
+   </div>
+   </section>
 
 
-<!-- user-profile-page-->	
-
-	<section data-role="page" id="user-profile-page">
+<!--	<section data-role="page" id="user-profile-page">
 		<div class = "overscroll">
 
 		
@@ -370,22 +291,7 @@ font-awesome.min.css">
   </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
       
-   </section>
-
-
-
-
-
-
-
-
-
-
-             
-
-
-
-
+   </section> 
 
 
    <section data-role="page" id="settings-page">
@@ -402,9 +308,22 @@ font-awesome.min.css">
             <li class="settings-item profile-settings-icon"><a href="#" class="js-logout"><img src="./lib/images/logout.svg">Logout</a></li>
          </ul>
       </div>
+   </section> -->
+
+   <section data-role="page" id="user-profile-edit-page">
+      <header data-role="header">
+         <h1>Profile Settings</h1>
+         <ul>
+            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left fa-lg" style="color: white;"></i></a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back" style="color: white;">Save</a></li>
+         </ul>
+
+      </header>
+      <div data-role="main"></div>
    </section>
 
-   <section data-role="page" id="profile-settings-page">
+  <!-- <section data-role="page" id="profile-settings-page">
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
@@ -430,7 +349,7 @@ font-awesome.min.css">
             </div>
       
          </form>
-         </section>
+         </section> -->
 
    <section data-role="page" id="password-settings-page">
       <header data-role="header">
@@ -442,6 +361,7 @@ font-awesome.min.css">
          </ul>
       </header>
       <div data-role="main" style="padding:1em">
+         
          <form id="password-form" data-ajax="false">
             <div class="form-control">
                <label for="password-oldpassword" class="form-label">Old Password</label>
@@ -457,6 +377,7 @@ font-awesome.min.css">
             </div>
          </form>
       </div>
+
    </section>
 
    <div class="modal" id="warning-modal">

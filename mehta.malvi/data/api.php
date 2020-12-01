@@ -78,17 +78,46 @@ function makeStatement($data) {
          return makeQuery($c,"SELECT * FROM track_locations WHERE coffee_id = ?",$p);
 
 
-      //case "recentcoffee_by_location":
-         //return makeQuery($c,"SELECT coffee_id, x.lat, x.lng FROM track_locations WHERE (coffee_id, date_create) in (SELECT coffee_id, max(date_create)  FROM track_locations GROUP BY  coffee_id)",$p;
-
+      case "recent_locations":
+         return makeQuery($c,"SELECT * FROM
+            `track_coffee` a
+           LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.coffee_id
+            WHERE user_id= ?
+            GROUP BY l.coffee_id
+            ",$p);
 
 
       case "check_signin":
          return makeQuery($c,"SELECT * FROM track_users WHERE username = ? AND password = md5(?)",$p);
 
       default: return ["error"=>"No Matched type"];
+
    }
 }
+
+// CURD
+// INSERT
+
+      //case "insert_user":
+        // $r = makeQuery($c,"SELECT * FROM `track_users` WHERE `username` = ? OR `email` = ?",$p);
+         //if(count($r['result'])) return ['error'=>"Username or Email already exists"];
+
+         //$r = makeQuery($c,"INSERT INTO
+            //`track_users`
+           // (`username`,`email`,`password`,`img`,`date_create`)
+           // VALUES
+           // (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+           // ",$p);
+         //return ["id"=>$c->lastInsertId()];
+
+      //default: return ["error"=>"No Matched type"];
+  // }
+//}
+
 
  
  $data = json_decode(file_get_contents("php://input"));
