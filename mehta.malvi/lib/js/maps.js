@@ -1,3 +1,5 @@
+
+
 const makeMap = async (target, center={lat: 37.786206, lng: -122.399341}) => {
    await checkData(()=>window.google);  
 
@@ -42,7 +44,7 @@ const makeMarkers = (map_el, map_locs) => {
 
    console.log(markers)
    map_el.data("markers",markers);
-   setTimeout(()=>setMapBounds(map_el, map_locs),150);
+      setTimeout(()=>setMapBounds(map_el, map_locs),150);
 }
 
 

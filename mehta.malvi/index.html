@@ -6,7 +6,12 @@
 	<title>Cuppa Trace</title>
    	<meta charset="UTF-8">
       <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="                                                                                                                     mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+   <link rel="apple-touch-icon" href="./lib/images/coffeelogo.png">
+   <link rel="icon" href="./lib/images/coffeelogo.png">
+
+
+   
 
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
@@ -16,14 +21,14 @@ font-awesome.min.css">
    	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    	<link rel="stylesheet" href="css/app.css">
 
+   <script src="./lib/js/jquery-2.2.4.min.js"></script>
    <script src="./lib/js/functions.js"></script>
-  <script src="./lib/js/maps.js"></script>
+   <script src="./lib/js/forms.js"></script>
+   <script src="./lib/js/maps.js"></script>
    <script src="./lib/js/pages.js"></script>
    <script src="./lib/js/parts.js"></script>
    <script src="./lib/js/signin.js"></script>
-   <script src="./lib/js/jquery-2.2.4.min.js"></script>
 	<script src="./lib/js/app.js"></script>
-    
 	
 	
 
@@ -32,16 +37,17 @@ font-awesome.min.css">
 
 </head>
 <body>
-
+<!-- Signin and Signup -->
 	<section data-role="page" id="signin-page">
-		<div data-role="main" class="display-flex">
-			
+		<div data-role="main" class="display-flex flex-column">
+			<div class=" ">
+          <img src ="./lib/images/coffeelogo.png" class="logo" style="height:30vw;margin-top:2em" alt="coffee Logo">
          </div>
 			
 			<form id="signin-form" data-ajax="false">
 				<div class="form-control">
 					<div class="flex-stretch display-flex flex-align-center flex-justify-center">
-				<img src="./lib/images/logo.png" style="width:40vw;height:40vw; margin-top: 3em; " alt="Coffee Logo">
+				<img src="./lib/images/logo.png" style="width:40vw;height:40vw; " alt="Coffee Logo">
 			</div>
 				<div class="form-control">
 					<label for="signin-username" class="form-label">Username</label>
@@ -58,13 +64,11 @@ font-awesome.min.css">
 				<div class="form-control signin-alt">
 					Dont have an account?
 				
-					<div class="form-control">
 					
-					<div class="form-control">
-				<a href="#signup-page" class="create">Create an Account</a>
+				<a href="#signup-page" class="create">Sign Up</a>
 
-				</div>
-				</div>
+		
+				
 			</form>
 		</div>
 	</section>
@@ -75,14 +79,14 @@ font-awesome.min.css">
 			<form id="signup-form" data-ajax="false">
 				<div class="flex-stretch display-flex align-center justify-center">
 					<p style="text-align: center;">
-				<img src="./lib/images/logo.png" style="width:40vw;height:40vw; margin: 30% 50% 0 50%;" alt="Coffee Logo"></p>
+				<img src="./lib/images/logo.png" style="width:30vw;height:30vw;" alt="Coffee Logo"></p>
 			</div>
 				<div class="form-control">
 					<label for="signup-username" class="form-label">Username</label>
 					<input id="signup-username" type="text" class="form-input" placeholder="Username" data-role="none">
 				</div>
             <div class="form-control">
-               <label for="signup-email" class="form-label">Username</label>
+               <label for="signup-email" class="form-label">Email</label>
                <input id="signup-email" type="email" class="form-input" placeholder="Email" data-role="none">
             </div>
 				<div class="form-control">
@@ -94,7 +98,8 @@ font-awesome.min.css">
 					<input id="signup-password-confirm" type="password" class="form-input" placeholder="Confirm Password" data-role="none">
 				</div>
 				<div class="form-control">
-					<a href="#recent-page" class="form-button button-primary">Sign up</a>
+               <input type="submit" class="form-button" value="Sign Up" data-role="none">
+            </div>
 					<div class="form-control signin-alt">
 					Already have an account?
 					<a href="#signin-page">SignIn</a>
@@ -114,8 +119,7 @@ font-awesome.min.css">
          </header>
          <div class="map"></div>
 
-           <div class="floater top right">
-            <div class="btn-circle" data-activate="#recent-add-modal" data-deactivate="#recent-profile-modal">&plus;</div>
+          
          </div>
       
          <div class="modal" id="recent-coffee-modal">
@@ -139,9 +143,15 @@ font-awesome.min.css">
         <h1> List Page</h1>
          <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-activate="#list-add-modal" style="color:white;">&plus;</a></li>
+            <li><a href="#" data-activate="#list-add-modal"><img src="./lib/images/plus.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;"></a></li>
          </ul>
       </header>
+      <div class="flex-stretch list-search">
+            <form class="hotdog" id="list-search-form" data-ajax="false">
+               <i class="search-icon"></i>
+                  <input type="search" id="list-search-input" data-role="none" placeholder="Search Coffees">
+               </form>
+         </div>
    
 
      <div data-role="main">
@@ -155,8 +165,15 @@ font-awesome.min.css">
       <div class="modal" id="list-add-modal">
          <div class="modal-back" data-deactivate="#list-add-modal"></div>
          <form id="list-add-form" data-ajax="false" class="modal-popup">
+            <input type="hidden" id="coffee-add-destination" value="#list-page">
             <div class="modal-head">Add a New Coffee</div>
             <div class="modal-body">
+               <div class="form-control">
+                     <input type="hidden" id="coffee-add-image">
+                     <label class="coffee-image-upload pic">
+                     <input type="file" data-role="none" id="coffee-add-upload">
+                   </label>
+               </div>
                <div class="form-control">
                   <label for="list-add-name" class="form-label">Coffee Name</label>
                   <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type Coffee name">
@@ -166,12 +183,21 @@ font-awesome.min.css">
                   <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type Coffee type">
                </div>
                <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Location</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type Coffee breed">
+                  <label for="list-add-rating" class="form-label">Rating</label>
+                 <div class="form-select">
+                     <select class="list-add-rating" id="list-add-rating" data-role="none">
+                        <option hidden></option>
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         <option>5</option>
+                     </select>
+                 </div>
                </div>
             </div>
             <div class="modal-foot">
-               <input type="submit" value="Save" data-role="none">
+                  <a href="#" class="js-coffee-add">Save</a>
             </div>
          </form>
       </div>
@@ -182,33 +208,34 @@ font-awesome.min.css">
       <header data-role="header">
          <h1>Coffee Page</h1>
          <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
+            <li style="color: #FC941C;"><a href="#" data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;"></a></li>
             <li class="flex-stretch"></li>
             <li>
                <a href="#coffee-profile-edit-page" class="ui-link">
-               <img src="./lib/images/edit.svg" alt="" class="icon" style="height:1.5em; width:1.5em;vertical-align: middle;">
+               <img src="./lib/images/edit.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;">
                </a>
             </li>
          </ul>
       </header>
      <div data-role="main" class="display-flex flex-column">
-         <div class="coffee-top">
-            <div class="map"></div>
-         </div>
-         <div class = "overscroll">
-         <div class="coffee-bottom">
+       <div class="coffee-bottom">
             <div class="profile"></div>   
+            <div class="coffee-locations center"></div>
       </div>
-   </div>
-
+        <div class="coffee-top">
+            <div class="map"></div>
+            <div class="floater bottom right">
+               <a href="#location-add-page" class="btn-circle">&plus;</a>
+            </div>
+        </div>
    </section>
    <section data-role="page" id="coffee-profile-edit-page">
       <header data-role="header">
          <h1>Coffee Info</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li style="color: #FC941C;"><a href="#" data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li style="color: #FC941C;"><a href="#" class="js-coffee-edit">Save</a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -231,11 +258,11 @@ font-awesome.min.css">
      <header data-role="header">
          <h1>Profile</h1>
          <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left fa-lg" style="color: white;"></i></a></li>
+            <li><a href="#" data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;"></a></li></a></li>
             <li class="flex-stretch"></li>
             <li>
                <a href="#settings-page" class="ui-link">
-               <i class ="fa fa-cog fa-lg" style="color: white;"></i>
+               <i class ="fa fa-cog fa-lg" style="color:#FC941C;"></i>
                </a>
             </li>
          </ul>
@@ -250,7 +277,7 @@ font-awesome.min.css">
    <header data-role="header">
          <h1>Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="#" data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;"></a></li></a></li>
             <li class="flex-stretch"></li>
          </ul>
       </header>
@@ -317,13 +344,15 @@ font-awesome.min.css">
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left fa-lg" style="color: white;"></i></a></li>
+            <li><a href="#"  data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;"></a></li></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back" style="color: white;">Save</a></li>
+            <li><a href="#"  class="js-user-profile-edit" data-rel="back" style="color: #FC941C;">Save</a></li>
          </ul>
 
       </header>
-      <div data-role="main"></div>
+      <div data-role="main">
+         <form id="user-profile-edit-form" data-ajax="false" style="padding:1em"></form>
+      </div>
    </section>
 
   <!-- <section data-role="page" id="profile-settings-page">
@@ -354,11 +383,67 @@ font-awesome.min.css">
          </form>
          </section> -->
 
+
+
+
+
+<section data-role="page" id="location-add-page">
+      <header data-role="header">
+         <h1>Choose Location</h1>
+         <ul>
+            <li style="color: #FC941C;"><a href="#" data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;"><a href="#" data-rel="back"></a></a></li>
+            <li class="flex-stretch"></li>
+            <li style="color: #FC941C;"><a href="#location-description-page">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="location-add-lat">
+         <input type="hidden" id="location-add-lng">
+         <div class="map"></div>
+      </div>
+   </section>
+
+   <section data-role="page" id="location-description-page">
+      <header data-role="header">
+         <h1>Describe Location</h1>
+         <ul>
+            <li style="color: #FC941C;"><a href="#" data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;"><a href="#" data-rel="back"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="color: #FC941C;"><a href="#" class="js-location-add">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="overscroll">
+            <form id="location-add-form" data-ajax="false" style="padding:1em">
+               <div class="form-control">
+                  <label for="location-add-cafename" class="form-label">Coffee Shop Name</label>
+                  <input id="location-add-cafename" type="text" class="form-input" data-role="none" placeholder="Type Coffee Shop Name">
+                </div>  
+               <div class="form-control">
+                  <label for="location-add-description" class="form-label">Description</label>
+                  <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
    <section data-role="page" id="password-settings-page">
       <header data-role="header">
          <h1>Password Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="#" data-rel="back"><img src="./lib/images/back.svg" alt="" class="icon" style="height:1em; width:1em;vertical-align: middle;"></a></li></a></li>
             <li class="flex-stretch"></li>
             <li><a href="#" data-rel="back">Save</a></li>
          </ul>
@@ -408,6 +493,7 @@ font-awesome.min.css">
       </a></li>
    </ul>
    </script>
+
 
 </body>
 </html>

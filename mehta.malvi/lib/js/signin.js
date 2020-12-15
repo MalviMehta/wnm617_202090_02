@@ -1,3 +1,5 @@
+
+
 const makeWarning = (target,message) => {
    $(target).addClass("active")
       .find(".message").html(message);
@@ -23,6 +25,7 @@ const checkSigninForm = async() => {
       type:'check_signin',
       params:[user,pass]
    });
+
    console.log(found_user)
    if(found_user.result.length) {
       // logged in
@@ -34,12 +37,16 @@ const checkSigninForm = async() => {
       console.log('failure');
       sessionStorage.removeItem('userId');
 
-      // DO SOMETHING HERE
-      makeWarning("#warning-modal","Sign In Failed");
+      // Error Login Message
+      makeWarning("#warning-modal","Incorrect username or password");
    }
 
    checkUserId();
 }
+
+
+
+
 
 
 const checkUserId = () => {
@@ -52,7 +59,12 @@ const checkUserId = () => {
          $.mobile.navigate("#signin-page");
    } else {
       // logged in
-      if(p.some(o=>window.location.hash===o))
-         $.mobile.navigate("#recent-page");
+      if(p.some(o=>window.location.hash===o)) {
+            query({type:'coffee_by_user_id',params:[sessionStorage.userId]})
+            .then(d=>{
+               if(d.result.length) $.mobile.navigate("#recent-page");
+                else $.mobile.navigate("#list-page");
+         })
+      }
    }
 }
